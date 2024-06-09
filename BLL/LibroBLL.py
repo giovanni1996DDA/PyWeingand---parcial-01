@@ -1,28 +1,34 @@
-from DAO import LibroDao
+from BLL.Exceptions.BookNotFoundException import BookNotFoundException
+from DAO.LibroDAO import LibroDAO
 
 
 class LibroBLL:
 
-    def  __init__(self):
+    def __init__(self):
         pass
 
     @staticmethod
-    def seleccionar():
-        libroDao = LibroDao()
+    def getAll():
+        libroDao = LibroDAO()
         return libroDao.get_all()
 
     @staticmethod
-    def seleccionarByISBN(isbn):
-        libroDao = LibroDao()
-        return libroDao.getByISBN()
+    def getByISBN(isbn):
+        libroDao = LibroDAO()
+        res = libroDao.getByISBN(isbn)
+        if res == None:
+            raise BookNotFoundException()
+        return res
 
     @staticmethod
-    def guardar(persona):
-        libroDao = LibroDao()
-        libroDao.guardar(persona)
-        return persona
+    def save(libro):
+        libroDao = LibroDAO()
+        libroDao.save(libro)
+        return libro
 
     @staticmethod
-    def actualizar(persona):
-        libroDao = LibroDao()
-        libroDao.update(persona)
+    def update(libro):
+        libroDao = LibroDAO()
+        updated = libroDao.update(libro)
+        if not updated:
+            raise BookNotFoundException()

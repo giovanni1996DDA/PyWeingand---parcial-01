@@ -13,7 +13,7 @@ class Libro(ABC):
         self._FecEdicion = fecedicion
 
     def getCategoria(self):
-        if self._CtdadPaginas == 0:
+        if self._CtdadPaginas <= 0:
             return "Libro sin establecer"
         if self._CtdadPaginas < 200:
             return "Libro corto"

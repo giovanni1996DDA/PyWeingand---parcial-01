@@ -4,4 +4,4 @@ class Autor:
         self.__Apellido = apellido
 
     def __str__(self):
-        return(f"{self.__Nombre}, {self.__Apellido}")
+        return(f"{self.__Apellido}, {self.__Nombre}")

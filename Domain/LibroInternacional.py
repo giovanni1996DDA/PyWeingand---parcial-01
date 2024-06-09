@@ -7,5 +7,5 @@ class LibroInternacional(Libro):
         self.__PaisOrigen = paisorigen
 
     def __str__(self):
-        return f"Título:{self._Titulo} {self._Edicion}a. edición, Autor: {self._Autor}, ISBN: {self._ISBN}, {self._Editorial}, {self._PaisOrigen}, " \
-               f"fecha {self._fecEdicion}, {self._CtdadPaginas} páginas"
+        return f"Título:{self._Titulo} {self._Edicion}ª. edición, Autor: {self._Autor}, ISBN: {self._ISBN}, {self._Editorial}, {self.__PaisOrigen}, " \
+               f"fecha {self._FecEdicion}, {self._CtdadPaginas} páginas"
